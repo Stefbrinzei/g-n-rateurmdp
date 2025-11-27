@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de mot de passe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Générateur de mot de passe</h1>
+        
+        <div class="input-group">
+            <label for="longueur">Longueur du mot de passe :</label>
+            <input type="number" id="longueur" min="4" max="50" value="12" placeholder="Ex: 12">
+        </div>
+
+        <div class="input-group">
+            <label>Type de caractères :</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="checkbox" name="type" value="minuscules" checked>
+                    <span>Lettres minuscules (a-z)</span>
+                </label>
+                <label class="radio-option">
+                    <input type="checkbox" name="type" value="majuscules">
+                    <span>Lettres majuscules (A-Z)</span>
+                </label>
+                <label class="radio-option">
+                    <input type="checkbox" name="type" value="chiffres">
+                    <span>Chiffres (0-9)</span>
+                </label>
+                <label class="radio-option">
+                    <input type="checkbox" name="type" value="speciaux">
+                    <span>Caractères spéciaux (!@#$%^&*)</span>
+                </label>
+            </div>
+        </div>
+
+        <button onclick="genererMotDePasse()">Générer le mot de passe</button>
+
+        <div class="result empty" id="resultat">
+            <p>Votre mot de passe apparaîtra ici</p>
+        </div>
+
+        <button id="copierBtn" style="display: none;" onclick="copierMotDePasse()">📋 Copier le mot de passe</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
